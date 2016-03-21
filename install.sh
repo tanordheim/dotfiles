@@ -1,7 +1,6 @@
 #!/bin/sh
 
-SCRIPT=$(readlink -f "$0")
-BASEDIR=$(dirname "$SCRIPT")
+BASEDIR=$(pwd -P)
 
 ln -sf $BASEDIR/gitignore_global ~/.gitignore_global
 ln -sf $BASEDIR/gitconfig ~/.gitconfig
