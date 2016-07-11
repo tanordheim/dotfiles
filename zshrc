@@ -8,6 +8,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zshrc.local" ]]; then
   source "${ZDOTDIR:-$HOME}/.zshrc.local"
 fi
 
+# Set editor
+export EDITOR=vim
+
 c() { cd ~/Code/$1; }
 _c() { _files -W ~/Code -/; }
 compdef _c c
