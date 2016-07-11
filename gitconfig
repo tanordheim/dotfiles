@@ -6,7 +6,6 @@
 [core]
     pager = less -FXRS -x2
     excludesfile = /home/trond/.gitignore_global
-    editor = vim
 	autocrlf = input
 [merge]
     tool = vimdiff
