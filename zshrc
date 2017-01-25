@@ -13,6 +13,7 @@ export EDITOR=vim
 
 # Configure golang environment
 export GOPATH=~/gocode
+export PATH="$PATH:$GOPATH/bin"
 
 c() { cd ~/Code/$1; }
 _c() { _files -W ~/Code -/; }
