@@ -11,6 +11,9 @@ fi
 # Set editor
 export EDITOR=vim
 
+# Configure golang environment
+export GOPATH=~/gocode
+
 c() { cd ~/Code/$1; }
 _c() { _files -W ~/Code -/; }
 compdef _c c
@@ -18,6 +21,6 @@ compdef _c c
 # Set by some git stuff
 unalias gc
 
-gc() { cd ~/go-code/src/github.com/$1; }
-_gc() { _files -W ~/go-code/src/github.com -/; }
+gc() { cd ~/gocode/src/github.com/$1; }
+_gc() { _files -W ~/gocode/src/github.com -/; }
 compdef _gc gc
