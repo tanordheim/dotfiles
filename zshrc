@@ -25,3 +25,10 @@ unalias gc
 gc() { cd ~/gocode/src/github.com/$1; }
 _gc() { _files -W ~/gocode/src/github.com -/; }
 compdef _gc gc
+
+# Configure terminal titles
+case $TERM in
+    xterm*)
+        precmd () {print -Pn "\e]0;%n@%m: %~\a"}
+        ;;
+esac
