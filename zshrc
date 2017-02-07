@@ -22,6 +22,10 @@ compdef _c c
 # Set by some git stuff
 unalias gc
 
+# Make sure we prefix git with noglob to avoid matching errors when using things
+# like ^ and ~
+alias git="noglob git"
+
 gc() { cd ~/gocode/src/github.com/$1; }
 _gc() { _files -W ~/gocode/src/github.com -/; }
 compdef _gc gc
