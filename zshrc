@@ -12,7 +12,7 @@ fi
 export EDITOR=vim
 
 # Configure golang environment
-export GOPATH=~/gocode
+export GOPATH=~/Dev
 export PATH="$PATH:$GOPATH/bin"
 
 c() { cd ~/Dev/src/github.com/$1; }
