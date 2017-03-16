@@ -15,8 +15,8 @@ export EDITOR=vim
 export GOPATH=~/gocode
 export PATH="$PATH:$GOPATH/bin"
 
-c() { cd ~/Code/$1; }
-_c() { _files -W ~/Code -/; }
+c() { cd ~/Dev/src/github.com/$1; }
+_c() { _files -W ~/Dev/src/github.com -/; }
 compdef _c c
 
 # Set by some git stuff
@@ -25,10 +25,6 @@ unalias gc
 # Make sure we prefix git with noglob to avoid matching errors when using things
 # like ^ and ~
 alias git="noglob git"
-
-gc() { cd ~/gocode/src/github.com/$1; }
-_gc() { _files -W ~/gocode/src/github.com -/; }
-compdef _gc gc
 
 # Configure terminal titles
 case $TERM in
