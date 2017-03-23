@@ -29,6 +29,11 @@ alias git="noglob git"
 # Wrap go commands in grc for colorization
 alias go="/usr/bin/grc go"
 
+# Add some common go test aliases
+alias gtu="go test -v -cover \$(go list ./... | grep -v /vendor/)" # Run go unit tests
+alias gti="go test -v -tags=integration -cover \$(go list ./... | grep -v /vendor/)" # Run go integration tests
+alias gt="gtu && gti" # Run all go tests
+
 # Configure terminal titles
 case $TERM in
     xterm*)
