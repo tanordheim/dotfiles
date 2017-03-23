@@ -24,4 +24,8 @@ ln -sf $BASEDIR/gitconfig ~/.gitconfig
 ln -sf $BASEDIR/zpreztorc ~/.zpreztorc
 ln -sf $BASEDIR/zshrc ~/.zshrc
 
+mkdir -p ~/.grc
+ln -sf $BASEDIR/grcconf ~/.grc/grc.conf
+ln -sf $BASEDIR/grcgotestconf ~/.grc/conf.gotest
+
 touch ~/.zshrc.local

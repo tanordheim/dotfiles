@@ -26,6 +26,9 @@ unalias gc
 # like ^ and ~
 alias git="noglob git"
 
+# Wrap go commands in grc for colorization
+alias go="/usr/bin/grc go"
+
 # Configure terminal titles
 case $TERM in
     xterm*)
