@@ -21,13 +21,14 @@ compdef _c c
 
 # Set by some git stuff
 unalias gc
+unalias grc
 
 # Make sure we prefix git with noglob to avoid matching errors when using things
 # like ^ and ~
 alias git="noglob git"
 
 # Wrap go commands in grc for colorization
-alias go="/usr/bin/grc go"
+alias go="grc go"
 
 # Add some common go test aliases
 alias gtu="go test -v -cover \$(go list ./... | grep -v /vendor/)" # Run go unit tests
