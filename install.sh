@@ -34,6 +34,7 @@ ln -sf $BASEDIR/xinitrc ~/.xinitrc
 ln -sf $BASEDIR/Xresources ~/.Xresources
 ln -sf $BASEDIR/i3/config ~/.config/i3/config
 ln -sf $BASEDIR/i3/i3blocks.conf ~/.config/i3/i3blocks.conf
+rm -rf ~/.config/i3/workspaces && ln -sf $BASEDIR/i3/workspaces ~/.config/i3/workspaces
 ln -sf $BASEDIR/compton/compton.conf ~/.config/compton.conf
 rm -rf ~/.i3blocks && ln -sf $BASEDIR/i3/blocks ~/.i3blocks
 ln -sf $BASEDIR/termite/config ~/.config/termite/config

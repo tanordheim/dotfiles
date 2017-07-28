@@ -1,5 +1,16 @@
 set $mod Mod4
 
+set $ws1 1
+set $ws2 2:soc
+set $ws3 3:worksoc
+set $ws4 4:code
+set $ws5 5:vm
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+
 #------------------------------------------------
 # Startup
 #------------------------------------------------
@@ -8,6 +19,9 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.*
 exec --no-startup-id compton -b
 exec --no-startup-id redshift
 exec --no-startup-id dropbox start
+
+# Restore workspaces
+exec --no-startup-id "i3-msg 'workspace $ws2; append_layout ~/.config/i3/workspaces/2.json'"
 
 #------------------------------------------------
 # Fonts and colors
@@ -51,17 +65,6 @@ new_window none
 #------------------------------------------------
 # General workflow
 #------------------------------------------------
-
-set $ws1 "1"
-set $ws2 "2:web"
-set $ws3 "3:code"
-set $ws4 "4:vm"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
 
 # Start a terminal
 bindsym $mod+Return exec termite
