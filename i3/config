@@ -1,0 +1,179 @@
+set $mod Mod4
+
+#------------------------------------------------
+# Startup
+#------------------------------------------------
+exec xset r rate 400 25 # increase keyboard repeat date
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.*
+exec --no-startup-id compton -b
+exec --no-startup-id redshift
+
+#------------------------------------------------
+# Fonts and colors
+#------------------------------------------------
+font pango:FuraMonoForPowerline Nerd Font Regular 10
+
+set $back               #383C4A
+set $primary            #D0D0D0
+set $secondary          #0FE0C9
+set $black              #282A2E
+set $grey               #303030
+set $white              #C5C8C6
+
+# class                 border   backgr.  text    indicator child_border
+client.focused          $primary $primary $black  #2e9ef4   $primary
+client.focused_inactive $black   $primary $black  #484e50   $black
+client.unfocused        $black   $back    $white  #292d2e   $black
+client.urgent           #2f343a  #900000  $white  #900000   #900000
+client.placeholder      #000000  #0c0c0c  $white  #000000   #0c0c0c
+client.background       $white
+
+#------------------------------------------------
+# Window management
+#------------------------------------------------
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Dont use mouse to determine focus
+focus_follows_mouse no
+
+#------------------------------------------------
+# i3-gaps configuration
+#------------------------------------------------
+gaps inner 25
+gaps outer 0
+smart_gaps on
+smart_borders on
+new_window none
+
+#------------------------------------------------
+# General workflow
+#------------------------------------------------
+
+# Start a terminal
+bindsym $mod+Return exec termite
+
+# Audio controls
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
+bindsym XF86AudioMute exec pulseaudio-ctl mute
+
+# Backlight control
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+# Lock screen and sleep
+bindsym $mod+Ctrl+l exec i3lock -c 000000
+bindsym XF86PowerOff exec i3lock -c 000000 && echo mem > /sys/power/state # TODO: currently not working since the file only writeable by root
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+
+# Change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus right
+bindsym $mod+i focus up
+
+# Move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+i move up
+
+# Split in horizontal orientation
+bindsym $mod+h split h
+
+# Split in vertical orientation
+bindsym $mod+v split v
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+# Switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym i resize grow height 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+#------------------------------------------------
+# Status bar configuration
+#------------------------------------------------
+
+bar {
+        status_command i3blocks -c ~/.config/i3/i3blocks.conf 2> ~/.config/i3/i3blocks.err
+        strip_workspace_numbers no
+        mode dock
+        position top
+        height 36
+        font pango: Fira Mono Medium for Powerline 10
+        colors {
+          background $back
+          separator $primary
+          statusline $primary
+          focused_workspace $primary $primary $back
+          active_workspace #1d2021 #1d2021 $primary
+          inactive_workspace $back $back $primary
+          urgent_workspace #cc241d #cc241d #ebdbb2
+        }
+}
