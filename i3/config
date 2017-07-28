@@ -21,13 +21,8 @@ exec --no-startup-id compton -b
 exec --no-startup-id redshift
 exec --no-startup-id dropbox start
 
-# Restore workspace $ws2
-exec --no-startup-id "i3-msg 'workspace $ws2; append_layout ~/.config/i3/workspaces/2.json'"
-exec --no-startup-id $term
-exec --no-startup-id firefox
-exec --no-startup-id slack
-
-# Set default workspace
+# Restore workspaces
+exec --no-startup-id "~/.config/i3/workspaces/start-2.sh $ws2 $term"
 exec --no-startup-id "i3-msg 'workspace $ws1'"
 
 #------------------------------------------------
