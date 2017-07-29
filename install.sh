@@ -38,6 +38,7 @@ rm -rf ~/.config/i3/workspaces && ln -sf $BASEDIR/i3/workspaces ~/.config/i3/wor
 ln -sf $BASEDIR/compton/compton.conf ~/.config/compton.conf
 rm -rf ~/.i3blocks && ln -sf $BASEDIR/i3/blocks ~/.i3blocks
 ln -sf $BASEDIR/termite/config ~/.config/termite/config
+ln -sf $BASEDIR/libinput/libinput-gestures.conf ~/.config/libinput-gestures.conf
 
 # GRC configuration
 ln -sf $BASEDIR/grcconf ~/.grc/grc.conf
