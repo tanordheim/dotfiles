@@ -9,7 +9,7 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 set $ws9 9
-set $ws10 10
+set $ws10 10:stash
 set $term termite
 
 #------------------------------------------------
@@ -87,7 +87,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Lock screen and sleep
 bindsym $mod+Ctrl+l exec i3lock -c 000000
-bindsym XF86PowerOff exec i3lock -c 000000 && echo mem > /sys/power/state # TODO: currently not working since the file only writeable by root
+bindsym XF86PowerOff exec i3lock -c 000000 && systemctl suspend
 
 # Kill focused window
 bindsym $mod+Shift+q kill
