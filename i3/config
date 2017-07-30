@@ -28,8 +28,7 @@ exec --no-startup-id xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput A
 exec --no-startup-id libinput-gestures
 
 # Restore workspaces
-exec --no-startup-id "~/.config/i3/workspaces/start-2.sh $ws2 $term"
-exec --no-startup-id "i3-msg 'workspace $ws1'"
+exec --no-startup-id "~/.config/i3/workspaces/start.sh $term $ws1 $ws2 $ws3 $ws4 $ws5 $ws6 $ws7 $ws8 $ws9 $ws10"
 
 #------------------------------------------------
 # Fonts and colors
