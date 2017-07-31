@@ -21,6 +21,9 @@ fi
 
 mkdir -p ~/.config/i3 ~/.grc
 
+# OS configuration
+ln -sf $BASEDIR/yaourtrc ~/.yaourtrc
+
 # Git configuration
 ln -sf $BASEDIR/gitignore_global ~/.gitignore_global
 ln -sf $BASEDIR/gitconfig ~/.gitconfig
