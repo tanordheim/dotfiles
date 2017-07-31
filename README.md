@@ -17,6 +17,8 @@
 - alsa-utils
 - acpi
 - ttf-font-awesome
+- feh
+- rofi
 
 ## Inspiration
 
