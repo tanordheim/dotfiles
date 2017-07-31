@@ -14,6 +14,9 @@
 - network-manager-applet
 - otf-fura-mono-powerline-git
 - ttf-fira-mono
+- alsa-utils
+- acpi
+- ttf-font-awesome
 
 ## Inspiration
 
