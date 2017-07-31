@@ -19,7 +19,10 @@
 - ttf-font-awesome
 - feh
 - rofi
+- xautolock
+- scrot
 
 ## Inspiration
 
 - https://github.com/jayywolff/dotfiles
+- https://github.com/andreatta/config/blob/master/i3/config (has autolaunching of apps and stuff)
