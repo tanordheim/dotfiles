@@ -19,7 +19,7 @@ then
   done
 fi
 
-mkdir -p ~/.config/i3 ~/.grc
+mkdir -p ~/.config/i3 ~/.config/termite ~/.grc
 
 # OS configuration
 ln -sf $BASEDIR/yaourtrc ~/.yaourtrc
