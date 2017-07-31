@@ -21,6 +21,7 @@
 - rofi
 - xautolock
 - scrot
+- xorg-xdpyinfo
 
 ## Inspiration
 

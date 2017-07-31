@@ -3,13 +3,13 @@
 TYPE="$1"
 
 # Take a screenshot and pixellate it
-scrot /tmp/screenlock.png
-mogrify -scale 10% -scale 1000% /tmp/screenlock.png
+# scrot /tmp/screenlock.png
+# mogrify -scale 10% -scale 1000% /tmp/screenlock.png
 
-# Lock the screen using the image
-i3lock -i /tmp/screenlock.png
+# Lock the screen
+i3lock -c 000000
 
-if [ "$TYPE" -eq "suspend" ]
+if [ "$TYPE" == "suspend" ]
 then
 
   # Suspend the machine
