@@ -3,7 +3,6 @@
 # Configure displays
 xrdb -merge ~/.Xresources
 xrandr --dpi 120 # originally 140 for the laptop
-xrandr --output DisplayPort-1 --right-of DisplayPort-2 # not needed for the laptop
 
 # Start the gnome keyring
 dbus-update-activation-environment --systemd DISPLAY
