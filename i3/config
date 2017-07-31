@@ -112,7 +112,8 @@ bindsym XF86PowerOff exec i3lock -c 000000 && systemctl suspend
 bindsym $mod+Shift+q kill
 
 # Start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
 
 # Change focus
 bindsym $mod+j focus left
