@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Captures a screenshot from a user defined area, and stores the screenshot
+# in the clipboard.
+
+maim -s | xclip -selection clipboard -t image/png

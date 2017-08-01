@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Captures a screenshot from a user defined area, and stores it in the screenshots folder.
+
+TIME=$(date +"%Y-%m-%d %H.%M.%S")
+maim -s "$HOME/Dropbox/Screenshots/Screenshot $TIME.png"

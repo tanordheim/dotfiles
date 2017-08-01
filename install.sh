@@ -48,4 +48,7 @@ ln -sf $BASEDIR/libinput/libinput-gestures.conf ~/.config/libinput-gestures.conf
 ln -sf $BASEDIR/grcconf ~/.grc/grc.conf
 ln -sf $BASEDIR/grcgotestconf ~/.grc/conf.gotest
 
+# Scripts
+rm -rf ~/.scripts && ln -sf $BASEDIR/scripts ~/.scripts
+
 touch ~/.zshrc.local

@@ -38,6 +38,9 @@ alias gtu="go test -v -cover \$(go list ./... | grep -v /vendor/)" # Run go unit
 alias gti="go test -v -tags=integration -cover \$(go list ./... | grep -v /vendor/)" # Run go integration tests
 alias gt="gtu && gti" # Run all go tests
 
+# Add the local scripts dir to PATH
+export PATH="$PATH:$HOME/.scripts"
+
 # Configure terminal titles
 case $TERM in
     xterm*)
