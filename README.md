@@ -22,6 +22,8 @@
 - xautolock
 - scrot
 - xorg-xdpyinfo
+- maim
+- xclip
 
 ## Inspiration
 
