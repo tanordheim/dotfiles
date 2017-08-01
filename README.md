@@ -24,6 +24,7 @@
 - xorg-xdpyinfo
 - maim
 - xclip
+- nemo
 
 ## Inspiration
 
