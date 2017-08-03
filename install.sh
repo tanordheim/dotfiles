@@ -35,7 +35,11 @@ ln -sf $BASEDIR/zshrc ~/.zshrc
 # UI configuration
 ln -sf $BASEDIR/xinitrc ~/.xinitrc
 ln -sf $BASEDIR/Xresources ~/.Xresources
+ln -sf $BASEDIR/Xresources-desktop ~/.Xresources-desktop
+ln -sf $BASEDIR/Xresources-laptop ~/.Xresources-laptop
 ln -sf $BASEDIR/i3/config ~/.config/i3/config
+ln -sf $BASEDIR/i3/config-desktop ~/.config/i3/config-desktop
+ln -sf $BASEDIR/i3/config-laptop ~/.config/i3/config-laptop
 ln -sf $BASEDIR/i3/i3blocks.conf ~/.config/i3/i3blocks.conf
 rm -rf ~/.config/i3/workspaces && ln -sf $BASEDIR/i3/workspaces ~/.config/i3/workspaces
 rm -rf ~/.config/i3/scripts && ln -sf $BASEDIR/i3/scripts ~/.config/i3/scripts
