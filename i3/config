@@ -24,25 +24,38 @@ exec --no-startup-id libinput-gestures
 # Restore workspaces
 # exec --no-startup-id "~/.config/i3/workspaces/start.sh $term $ws1 $ws2 $ws3 $ws4 $ws5 $ws6 $ws7 $ws8 $ws9 $ws10"
 
+# Set application borders
+for_window [class="^.*"] border pixel 1
+
 #------------------------------------------------
 # Fonts and colors
 #------------------------------------------------
-font pango:FuraMonoForPowerline Nerd Font Regular 10
 
-set $back               #383C4A
-set $primary            #D0D0D0
-set $secondary          #0FE0C9
-set $black              #282A2E
-set $grey               #303030
-set $white              #C5C8C6
+# Load color scheme from Xresources
+set_from_resource $darkred     color1  #000000
+set_from_resource $red         color9  #000000
+set_from_resource $darkgreen   color2  #000000
+set_from_resource $green       color10 #000000
+set_from_resource $darkyellow  color3  #000000
+set_from_resource $yellow      color11 #000000
+set_from_resource $darkblue    color4  #000000
+set_from_resource $blue        color12 #000000
+set_from_resource $darkmagenta color5  #000000
+set_from_resource $magenta     color13 #000000
+set_from_resource $darkcyan    color6  #000000
+set_from_resource $cyan        color14 #000000
+set_from_resource $darkwhite   color7  #000000
+set_from_resource $white       color15 #000000
 
-# class                 border   backgr.  text    indicator child_border
-client.focused          $primary $primary $black  #2e9ef4   $primary
-client.focused_inactive $black   $primary $black  #484e50   $black
-client.unfocused        $black   $back    $white  #292d2e   $black
-client.urgent           #2f343a  #900000  $white  #900000   #900000
-client.placeholder      #000000  #0c0c0c  $white  #000000   #0c0c0c
-client.background       $white
+# Use custom colors for black
+set $black       #1d2021
+set $darkblack   #282828
+
+# Window colors           border      background   text            indicator    child_border
+client.focused            $darkblack  $darkblack   $darkblue       $darkblack   $darkblack
+client.focused_inactive   $black      $black       $darkwhite      $darkblack   $darkblack
+client.unfocused          $black      $black       $darkwhite      $darkblack   $darkblack
+client.urgent             $black      $black       $darkwhite      $darkblack   $darkblack
 
 #------------------------------------------------
 # Window management
@@ -62,11 +75,46 @@ __WORKSPACE_DISPLAYS__
 #------------------------------------------------
 # i3-gaps configuration
 #------------------------------------------------
-gaps inner 25
+gaps inner 10
 gaps outer 0
-smart_gaps on
-smart_borders on
-new_window none
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 #------------------------------------------------
 # General workflow
@@ -88,8 +136,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Lock screen and sleep
-bindsym $mod+Ctrl+l exec ~/.config/i3/scripts/lock.sh
-bindsym XF86PowerOff exec ~/.config/i3/scripts/lock.sh suspend
+bindsym $mod+Ctrl+l exec i3lock-fancy
+bindsym XF86PowerOff exec i3lock-fancy && systemctl suspend
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -187,12 +235,12 @@ bar {
         height 36
         font pango: Fira Mono Medium for Powerline 10
         colors {
-          background $back
-          separator $primary
-          statusline $primary
-          focused_workspace $primary $primary $back
-          active_workspace #1d2021 #1d2021 $primary
-          inactive_workspace $back $back $primary
-          urgent_workspace #cc241d #cc241d #ebdbb2
+          background #1d2021
+          separator #a89984
+          statusline #a89984
+          focused_workspace #458588 #458588 #1d2021
+          active_workspace #cc241d #cc241d #282828
+          inactive_workspace #1d2021 #1d2021 #458588
+          urgent_workspace #689d6a #689d6a #1d2021
         }
 }

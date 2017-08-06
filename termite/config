@@ -35,14 +35,14 @@ filter_unmatched_urls = true
 
 ## ORIGINAL COLORS
 
-# #cursor = #dcdccc
-# #cursor_foreground = #dcdccc
-# foreground = #dcdccc
-# foreground_bold = #ffffff
-# background = #3f3f3f
+#cursor = #dcdccc
+#cursor_foreground = #dcdccc
+#foreground = #dcdccc
+#foreground_bold = #ffffff
+#background = #3f3f3f
 
 # # 20% background transparency (requires a compositor)
-# #background = rgba(63, 63, 63, 0.8)
+#background = rgba(63, 63, 63, 0.8)
 
 # # if unset, will reverse foreground and background
 # highlight = #2f2f2f
@@ -67,9 +67,10 @@ filter_unmatched_urls = true
 
 ## SOLARIZED COLORS
 foreground = #839496
-foreground_bold = #eee8d5
-#foreground_dim = #888888
-background = #002b36
+oreground_bold = #eee8d5
+foreground_dim = #888888
+#background = #002b36
+background = rgba(0, 43, 53, 0.85)
 cursor = #93a1a1
 
 # if unset, will reverse foreground and background
