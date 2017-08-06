@@ -3,7 +3,7 @@
 - All iosevka fonts
 - i3-gaps
 - i3blocks
-- i3lock
+- i3lock-color
 - dmenu
 - perl-json-xs
 - perl-anyevent-i3

@@ -9,7 +9,7 @@ __WORKSPACE_NAMES__
 # Startup
 #------------------------------------------------
 exec xset r rate 400 25 # increase keyboard repeat date
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.*
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec --no-startup-id compton -b
 exec --no-startup-id redshift
 exec --no-startup-id dropbox start
@@ -95,8 +95,11 @@ bindsym XF86PowerOff exec ~/.config/i3/scripts/lock.sh suspend
 bindsym $mod+Shift+q kill
 
 # Start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show run
+
+# Capture screenshot
+bindsym Print exec ~/.scripts/capture-ss
+bindsym Shift+Print exec ~/.scripts/capture-ss-clip
 
 # Change focus
 bindsym $mod+j focus left
