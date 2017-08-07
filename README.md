@@ -25,6 +25,7 @@
 - maim
 - xclip
 - nemo
+- sysstat
 
 ## Inspiration
 
