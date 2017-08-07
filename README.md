@@ -26,6 +26,7 @@
 - xclip
 - nemo
 - sysstat
+- playerctl
 
 ## Inspiration
 
