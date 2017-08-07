@@ -136,8 +136,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Lock screen and sleep
-bindsym $mod+Ctrl+l exec i3lock-fancy
-bindsym XF86PowerOff exec i3lock-fancy && systemctl suspend
+bindsym $mod+Ctrl+l exec ~/.config/i3/scripts/lock.sh
+bindsym XF86PowerOff exec ~/.config/i3/scripts/lock.sh suspend
 
 # Kill focused window
 bindsym $mod+Shift+q kill
