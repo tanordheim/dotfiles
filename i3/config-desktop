@@ -208,6 +208,7 @@ bindsym $mod+2 exec "i3-msg workspace $ws2 && i3-msg workspace $ws7"
 bindsym $mod+3 exec "i3-msg workspace $ws3 && i3-msg workspace $ws8"
 bindsym $mod+4 exec "i3-msg workspace $ws4 && i3-msg workspace $ws9"
 bindsym $mod+5 exec "i3-msg workspace $ws5 && i3-msg workspace $ws10"
+bindsym $mod+0 exec "i3-msg workspace $ws5 && i3-msg workspace $ws10"
 
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
