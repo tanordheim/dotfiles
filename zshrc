@@ -47,3 +47,13 @@ case $TERM in
         precmd () {print -Pn "\e]0;%n@%m: %~\a"}
         ;;
 esac
+
+# Windows Linux Subsystem convenience settings
+WSL_ENABLED=$(cat /proc/sys/kernel/osrelease | grep Microsoft)
+if [ ! -z "$WSL_ENABLED" ]
+then
+	alias dotnet="/mnt/c/Program\ Files/dotnet/dotnet.exe"
+	alias node="/mnt/c/Program\ Files/nodejs/node.exe"
+	alias npm="/mnt/c/Program\ Files/nodejs/node.exe C:\\\Program\ Files\\\nodejs\\\node_modules\\\npm\\\bin\\\npm-cli.js"
+	alias docker="/mnt/c/Program\ Files/Docker/Docker/resources/bin/docker.exe"
+fi
