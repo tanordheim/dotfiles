@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Enables the touchpad
+xinput --enable 'DLL075B:01 06CB:76AF Touchpad'
