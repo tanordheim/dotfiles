@@ -47,10 +47,3 @@ case $TERM in
         precmd () {print -Pn "\e]0;%n@%m: %~\a"}
         ;;
 esac
-
-# Windows Linux Subsystem convenience settings
-WSL_ENABLED=$(cat /proc/sys/kernel/osrelease | grep Microsoft)
-if [ ! -z "$WSL_ENABLED" ]
-then
-	alias docker="/mnt/c/Program\ Files/Docker/Docker/resources/bin/docker.exe"
-fi
