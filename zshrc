@@ -41,6 +41,9 @@ alias gt="gtu && gti" # Run all go tests
 # Add the local scripts dir to PATH
 export PATH="$PATH:$HOME/.scripts"
 
+# Add the local bin dir to PATH
+export PATH="$PATH:$HOME/.bin"
+
 # Add some other common aliases
 alias open="xdg-open"
 
