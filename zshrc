@@ -34,9 +34,10 @@ alias git="noglob git"
 alias go="grc go"
 
 # Add some common go test aliases
-alias gtu="go test -v -cover ./..." # Run go unit tests
-alias gti="go test -v -tags=integration -cover ./..." # Run go integration tests
-alias gt="gtu && gti" # Run all go tests
+alias gt="go test -cover ./..." # Run go unit tests
+alias gtv="go test -v -cover ./..." # Run go unit tests in verbose mode
+alias gti="go test -tags=integration -cover ./..." # Run go integration tests
+alias gtiv="go test -v -tags=integration -cover ./..." # Run go integration tests in verbose mode
 
 # Add the local scripts dir to PATH
 export PATH="$PATH:$HOME/.scripts"
