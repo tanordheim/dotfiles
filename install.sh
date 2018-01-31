@@ -29,6 +29,10 @@ ln -sf $BASEDIR/gitconfig ~/.gitconfig
 ln -sf $BASEDIR/zpreztorc ~/.zpreztorc
 ln -sf $BASEDIR/zshrc ~/.zshrc
 
+# tmux configuration
+ln -sf $BASEDIR/tmux.conf ~/.tmux.conf
+ln -sf $BASEDIR/tmux.theme.conf ~/.tmux.theme.conf
+
 # GRC configuration
 ln -sf $BASEDIR/grcconf ~/.grc/grc.conf
 ln -sf $BASEDIR/grcgotestconf ~/.grc/conf.gotest
