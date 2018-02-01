@@ -24,6 +24,7 @@ then
 fi
 
 REALPATH=$(realpath --relative-to="$GOPATH/src" "$DIR")
+CHECK_GLOB="$DIR/*_test.go"
 
 CMD="onchange '$CHECK_GLOB' -v -i -- grc go test -v $REALPATH"
 if [ ! -z "$RUN" ]
