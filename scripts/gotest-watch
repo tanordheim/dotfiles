@@ -8,6 +8,7 @@ then
 	echo "Usage: $0 [directory to watch]"
 	exit 1
 fi
+RUN="$2"
 
 ONCHANGE=$(which onchange || true)
 if [ -z "$ONCHANGE" ]
@@ -24,4 +25,9 @@ fi
 
 REALPATH=$(realpath --relative-to="$GOPATH/src" "$DIR")
 
-onchange "$CHECK_GLOB" -v -i -- grc go test -v "$REALPATH"
+CMD="onchange '$CHECK_GLOB' -v -i -- grc go test -v $REALPATH"
+if [ ! -z "$RUN" ]
+then
+	CMD="${CMD} -run $RUN"
+fi
+$CMD
