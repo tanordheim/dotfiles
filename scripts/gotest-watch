@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -e
+
+DIR="$1"
+if [ -z "$DIR" ]
+then
+	echo "Usage: $0 [directory to watch]"
+	exit 1
+fi
+
+ONCHANGE=$(which onchange || true)
+if [ -z "$ONCHANGE" ]
+then
+	echo "onchange must be installed, npm install -g onchange"
+	exit 1
+fi
+
+if [ ! -d "$DIR" ]
+then
+	echo "Directory '$DIR' does not exist"
+	exit 1
+fi
+
+REALPATH=$(realpath --relative-to="$GOPATH/src" "$DIR")
+
+onchange "$CHECK_GLOB" -v -i -- grc go test -v "$REALPATH"
