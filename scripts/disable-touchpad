@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Disables the touchpad
-xinput --disable 'DLL075B:01 06CB:76AF Touchpad'
