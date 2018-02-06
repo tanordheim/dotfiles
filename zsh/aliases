@@ -1,0 +1,5 @@
+# Wrap go commands in grc for colorization of things like "go test".
+alias go="grc go"
+
+# "open" alias, bad habit from OSX.
+alias open="xdg-open"
