@@ -10,8 +10,8 @@ export EDITOR=vim
 export GOPATH=~/Dev
 export PATH="$PATH:$GOPATH/bin"
 
-# Change TERM when SSH-ing since xterm-termite isn't usually supported remotely
-alias ssh="TERM=xterm ssh"
+# Configure ASP.NET Core environment
+export ASPNETCORE_ENVIRONMENT=Development
 
 c() { cd ~/Dev/src/github.com/$1; }
 _c() { _files -W ~/Dev/src/github.com -/; }
