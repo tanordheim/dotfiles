@@ -1,3 +1,6 @@
+# Use colors in ls
+alias ls="ls --color"
+
 # Wrap go commands in grc for colorization of things like "go test".
 alias go="grc go"
 
