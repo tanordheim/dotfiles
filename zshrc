@@ -78,6 +78,7 @@ export SAVEHIST=$HISTSIZE
 #
 
 source $HOME/.zsh/aliases
+source $HOME/.zsh/bindings
 source $HOME/.zsh/colors
 source $HOME/.zsh/completions
 source $HOME/.zsh/exports

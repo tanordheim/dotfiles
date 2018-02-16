@@ -17,7 +17,7 @@ ln -sf $BASEDIR/gitconfig ~/.gitconfig
 
 # Shell configuration
 ln -sf $BASEDIR/zshrc ~/.zshrc
-ln -sf $BASEDIR/zsh ~/.zsh
+rm -rf ~/.zsh && ln -sf $BASEDIR/zsh ~/.zsh
 touch ~/.zshrc.local
 
 # tmux configuration
