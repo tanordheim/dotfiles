@@ -44,7 +44,8 @@ function +vi-git-untracked() {
 setopt PROMPT_SUBST
 
 # export RPROMPT=$RPROMPT_BASE
-export PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%3~%F{yellow}%B%(1j.*.)%(?..!)%b%f%F{red}%B%b%f \${vcs_info_msg_0_}%# "
+export PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%3~%F{yellow}%B%(1j.*.)%(?..!)%b%f%F{red}%B%b%f \${vcs_info_msg_0_}
+%# "
 export RPROMPT=""
 
 #
