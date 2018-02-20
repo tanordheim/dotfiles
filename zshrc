@@ -1,6 +1,7 @@
 #
 # Auto-completion
 #
+export TMUX=""
 
 autoload -U compinit
 compinit -u
@@ -39,11 +40,12 @@ function +vi-git-untracked() {
   fi
 }
 
-RPROMPT_BASE="\${vcs_info_msg_0_}%F{blue}%~%f"
+# RPROMPT_BASE="\${vcs_info_msg_0_}%F{blue}%~%f"
 setopt PROMPT_SUBST
 
-export RPROMPT=$RPROMPT_BASE
-export PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%1~%F{yellow}%B%(1j.*.)%(?..!)%b%f%F{red}%B%b%f "
+# export RPROMPT=$RPROMPT_BASE
+export PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%3~%F{yellow}%B%(1j.*.)%(?..!)%b%f%F{red}%B%b%f \${vcs_info_msg_0_}%# "
+export RPROMPT=""
 
 #
 # Options
@@ -66,6 +68,13 @@ setopt printexitvalue
 setopt sharehistory
 
 #
+# Bindings
+#
+
+# emacs bindings.
+bindkey -e
+
+#
 # History
 #
 
@@ -78,7 +87,6 @@ export SAVEHIST=$HISTSIZE
 #
 
 source $HOME/.zsh/aliases
-source $HOME/.zsh/bindings
 source $HOME/.zsh/colors
 source $HOME/.zsh/completions
 source $HOME/.zsh/exports
@@ -113,28 +121,30 @@ function report-start-time() {
   emulate -L zsh
   if [ $ZSH_START_TIME ]; then
     local DELTA=$(($SECONDS - $ZSH_START_TIME))
-    local DAYS=$((~~($DELTA / 86400)))
-    local HOURS=$((~~(($DELTA - $DAYS * 86400) / 3600)))
-    local MINUTES=$((~~(($DELTA - $DAYS * 86400 - $HOURS * 3600) / 60)))
-    local SECS=$(($DELTA - $DAYS * 86400 - $HOURS * 3600 - $MINUTES * 60))
-    local ELAPSED=''
-    test "$DAYS" != '0' && ELAPSED="${DAYS}d"
-    test "$HOURS" != '0' && ELAPSED="${ELAPSED}${HOURS}h"
-    test "$MINUTES" != '0' && ELAPSED="${ELAPSED}${MINUTES}m"
-    if [ "$ELAPSED" = '' ]; then
-      SECS="$(print -f "%.2f" $SECS)s"
-    elif [ "$DAYS" != '0' ]; then
-      SECS=''
-    else
-      SECS="$((~~$SECS))s"
+    local MIN_REPORT_DURATION=3
+    if [ 1 -eq "$(echo "${DELTA} > ${MIN_REPORT_DURATION}" | bc)" ]
+    then
+        local DAYS=$((~~($DELTA / 86400)))
+        local HOURS=$((~~(($DELTA - $DAYS * 86400) / 3600)))
+        local MINUTES=$((~~(($DELTA - $DAYS * 86400 - $HOURS * 3600) / 60)))
+        local SECS=$(($DELTA - $DAYS * 86400 - $HOURS * 3600 - $MINUTES * 60))
+        local ELAPSED=''
+        test "$DAYS" != '0' && ELAPSED="${DAYS}d"
+        test "$HOURS" != '0' && ELAPSED="${ELAPSED}${HOURS}h"
+        test "$MINUTES" != '0' && ELAPSED="${ELAPSED}${MINUTES}m"
+        if [ "$ELAPSED" = '' ]; then
+          SECS="$(print -f "%.2f" $SECS)s"
+        elif [ "$DAYS" != '0' ]; then
+          SECS=''
+        else
+          SECS="$((~~$SECS))s"
+        fi
+        ELAPSED="${ELAPSED}${SECS}"
+        local ITALIC_ON=$'\e[3m'
+        local ITALIC_OFF=$'\e[23m'
+        print -P "%F{cyan}%{$ITALIC_ON%}Elapsed: ${ELAPSED}%{$ITALIC_OFF%}%f"
     fi
-    ELAPSED="${ELAPSED}${SECS}"
-    local ITALIC_ON=$'\e[3m'
-    local ITALIC_OFF=$'\e[23m'
-    export RPROMPT="%F{cyan}%{$ITALIC_ON%}${ELAPSED}%{$ITALIC_OFF%}%f $RPROMPT_BASE"
     unset ZSH_START_TIME
-  else
-    export RPROMPT="$RPROMPT_BASE"
   fi
 }
 add-zsh-hook precmd report-start-time

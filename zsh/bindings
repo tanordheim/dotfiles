@@ -1,2 +1,0 @@
-# Reverse history search
-bindkey '^R' history-incremental-search-backward
