@@ -6,5 +6,5 @@ Required packages:
 - sxhkd
 - dunst
 - feh
-- polybar
-- font-awesome
+- polybar (from getdeb)
+- fonts-font-awesome
