@@ -9,3 +9,4 @@ Required packages:
 - polybar (from getdeb)
 - fonts-font-awesome
 - rxvt-unicode-256color
+- rofi
