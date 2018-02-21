@@ -37,7 +37,7 @@ text-font = Monaco:antialias=true:pixelsize=14;2
 icon-font = FontAwesome:pixelsize=10;1
 
 [bar/primary]
-monitor = ${env:MONITOR:DisplayPort-1}
+monitor = ${env:PRIMARY_MONITOR}
 width = ${sizes.width}
 height = ${sizes.height}
 offset-x = ${sizes.offset-x}
@@ -65,7 +65,7 @@ modules-right = spotify volume date powermenu
 wm-restack = bspwm
 
 [bar/secondary]
-monitor = ${env:MONITOR:DisplayPort-2}
+monitor = ${env:SECONDARY_MONITOR}
 width = ${sizes.width}
 height = ${sizes.height}
 offset-x = ${sizes.offset-x}
