@@ -62,6 +62,9 @@ font-1 = ${fonts.icon-font}
 modules-left = bspwm xwindow
 modules-right = spotify volume date powermenu
 
+tray-position = right
+tray-padding = ${sizes.label-padding}
+
 wm-restack = bspwm
 
 [bar/secondary]
@@ -89,11 +92,6 @@ font-1 = ${fonts.icon-font}
 
 modules-left = bspwm xwindow
 modules-right = date
-
-tray-position = right
-tray-padding = ${sizes.label-padding}
-; tray-transparent = false
-; tray-background = #505050
 
 wm-restack = bspwm
 
