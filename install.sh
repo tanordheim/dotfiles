@@ -11,6 +11,11 @@ then
 fi
 touch ~/.config/base16
 
+# Xorg/WM configuration
+ln -sf $BASEDIR/Xresources ~/.Xresources
+rm -rf ~/.config/bspwm && ln -sf $BASEDIR/bspwm ~/.config/bspwm
+rm -rf ~/.config/sxhkd && ln -sf $BASEDIR/sxhkd ~/.config/sxhkd
+
 # Git configuration
 ln -sf $BASEDIR/gitignore_global ~/.gitignore_global
 ln -sf $BASEDIR/gitconfig ~/.gitconfig
@@ -29,3 +34,6 @@ ln -sf $BASEDIR/grcgotestconf ~/.grc/conf.gotest
 
 # Scripts
 rm -rf ~/.scripts && ln -sf $BASEDIR/scripts ~/.scripts
+
+# Fonts
+mkdir -p ~/.fonts && cp fonts/* ~/.fonts/
