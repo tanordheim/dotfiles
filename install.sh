@@ -15,6 +15,7 @@ touch ~/.config/base16
 ln -sf $BASEDIR/Xresources ~/.Xresources
 rm -rf ~/.config/bspwm && ln -sf $BASEDIR/bspwm ~/.config/bspwm
 rm -rf ~/.config/sxhkd && ln -sf $BASEDIR/sxhkd ~/.config/sxhkd
+rm -rf ~/.config/polybar && ln -sf $BASEDIR/polybar ~/.config/polybar
 
 # Git configuration
 ln -sf $BASEDIR/gitignore_global ~/.gitignore_global
