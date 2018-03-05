@@ -10,6 +10,10 @@ super + Return
 super + @space
 	rofi -show drun -display-drun '> '
 
+# lock screen
+super + ctrl + s
+	i3lock -c 000000
+
 # capture screenshots
 super + @Print
 	scrot -s "$HOME/Dropbox/Screenshots/Screenshot $(date '+%Y-%m-%d %H.%M.%S').png" -e 'xclip -selection c -t image/png < "$f"'
