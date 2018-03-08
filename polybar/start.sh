@@ -15,7 +15,7 @@ then
         export SECONDARY_MONITOR=""
     else
         export PRIMARY_MONITOR="DP-1-2"
-        export SECONDARY_MONITOR="DP-2-1"
+        export SECONDARY_MONITOR="DP-2-2"
     fi
 fi
 
