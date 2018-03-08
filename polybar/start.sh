@@ -8,8 +8,15 @@ export SECONDARY_MONITOR="DisplayPort-2"
 
 if [ "$HOST" = "mirage" ]
 then
-	export PRIMARY_MONITOR="eDP-1"
-	export SECONDARY_MONITOR=""
+    EDP_CONNECTED=$(xrandr --listmonitors | grep eDP-1)
+    if [ $? -eq 0  ]
+    then
+        export PRIMARY_MONITOR="eDP-1"
+        export SECONDARY_MONITOR=""
+    else
+        export PRIMARY_MONITOR="DP-1-2"
+        export SECONDARY_MONITOR="DP-2-1"
+    fi
 fi
 
 echo "primary=$PRIMARY_MONITOR"
