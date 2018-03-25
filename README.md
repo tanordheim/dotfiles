@@ -10,3 +10,5 @@ Required packages:
 - fonts-font-awesome
 - rxvt-unicode-256color
 - rofi
+- compton
+- i3lock
