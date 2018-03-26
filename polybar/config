@@ -34,7 +34,9 @@ label-padding = 2
 
 [fonts]
 text-font = Monaco:antialias=true:pixelsize=14;2
-icon-font = FontAwesome:pixelsize=10;1
+icon-font = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+icon-font-solid = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+icon-font-brands = "Font Awesome 5 Brands:pixelsize=10;1"
 
 [bar/primary]
 monitor = ${env:PRIMARY_MONITOR}
@@ -58,6 +60,8 @@ module-margin-right = ${sizes.module-margin-right}
 
 font-0 = ${fonts.text-font}
 font-1 = ${fonts.icon-font}
+font-2 = ${fonts.icon-font-solid}
+font-3 = ${fonts.icon-font-brands}
 
 modules-left = bspwm xwindow
 modules-right = spotify volume date powermenu
@@ -89,6 +93,8 @@ module-margin-right = ${sizes.module-margin-right}
 
 font-0 = ${fonts.text-font}
 font-1 = ${fonts.icon-font}
+font-2 = ${fonts.icon-font-solid}
+font-3 = ${fonts.icon-font-brands}
 
 modules-left = bspwm xwindow
 modules-right = date
