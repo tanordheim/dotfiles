@@ -60,7 +60,7 @@ setopt autoparamslash
 
 # command- and argument-auto-correction
 setopt correct
-setopt correctall
+# setopt correctall
 
 # print exit value for non-zero exit codes
 setopt printexitvalue
